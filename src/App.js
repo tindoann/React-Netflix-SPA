@@ -1,12 +1,13 @@
 import React from 'react'
-import './App.css'; 
+import { Switch, Route } from 'react-router-dom'
+import Main from './pages'; 
 
 function App() {
   return (
-    <div>
-      <h1>Netflex Project</h1>
-    </div>
+   <Switch>
+     <Route path='/' component={Main} />
+   </Switch>
   ); 
 }
 
-export default App
+export default App; 
