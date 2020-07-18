@@ -13,7 +13,7 @@ class Header extends Component {
         </div>
         {/* Header Content */}
         <div className='header-conent'>
-          <h1>See what's next</h1>
+          <Title>See what's next</Title>
           <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME</SubTitle>
           <Link className='main-offer-btn'>try it now</Link>
         </div>
@@ -49,7 +49,7 @@ const HeaderComponent = styled.div`
   position: absolute; 
   translate: transform(-50%, -50%); 
   cursor: pointer; 
-  transition: background 0.2s easse-in; 
+  transition: background 0.2s ease-in; 
   &:hover {
     background: var(--main-red-hover); 
   }
@@ -60,12 +60,11 @@ const HeaderComponent = styled.div`
   position: relative; 
   height: 10rem; 
   z-index: 1; 
-  }
+}
 
 
 // Header Content
 .header-content {
-  .header-content {
     width: 65%; 
     position: relative; 
     margin: 4.5rem auto 0; 
@@ -76,7 +75,7 @@ const HeaderComponent = styled.div`
     flex-direction: column; 
     z-index: 1; 
   }
-}
+
 
 // Main Offer Btn
 .main-offer-btn {
@@ -90,9 +89,12 @@ const HeaderComponent = styled.div`
   border-radius: 0.1875rem; 
   font-size: 2rem; 
   text-align: center; 
-  box-shadow: 0 1px 0 rgba(0, 0, 0.45); 
-  transition: background 0.2s ease-in; 
+  box-shadow: 0 1px 0 rgba(0,0,0,0.45); 
   cursor: pointer; 
+  transition: background 0.2s ease-in; 
+  &:hover {
+    background: var(--main-red-hover); 
+  }
 }
 `;
 
