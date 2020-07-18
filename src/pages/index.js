@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../component/Header';  
-import '../css/App.css'; 
+import Header from '../components/Header';  
 
 class Main extends Component {
   render() {
@@ -12,4 +11,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default Main;
