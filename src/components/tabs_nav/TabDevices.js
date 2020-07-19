@@ -3,7 +3,7 @@ import React from "react";
 function TabDevices() {
   return (
     <svg
-      class='tab-icon-device'
+      className='tab-icon-devices '
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 45 145 48"
       focusable="true"
