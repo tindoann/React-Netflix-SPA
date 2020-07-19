@@ -81,27 +81,6 @@ const HeaderComponent = styled.div`
   }
 
 
-// Main Offer Btn
-.main-offer-btn {
-  display: inline-block; 
-  background: var(--main-red); 
-  text-transform: uppercase; 
-  border: none; 
-  outline: none; 
-  margin: 0 33%; 
-  padding: 1.5rem; 
-  border-radius: 0.1875rem; 
-  font-size: 2rem; 
-  text-align: center; 
-  box-shadow: 0 1px 0 rgba(0,0,0,0.45); 
-  cursor: pointer; 
-  transition: background 0.2s ease-in; 
-  &:hover {
-    background: var(--main-red-hover); 
-  }
-}
-;
-
 //Icon
 .Icon svg {
   vertical-align: bottom; 
