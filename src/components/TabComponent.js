@@ -3,9 +3,10 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import TabDoor from './tabs_nav/TabDoor'; 
 import TabDevices from './tabs_nav/TabDevices'; 
 import TabPrices from './tabs_nav/TabPrices'; 
-import TabContentOne from './TabContentOne'; 
 // Tabs Content
+import TabContentOne from './TabContentOne'; 
 import TabContentTwo from './TabContentTwo'
+import TabContentThree from './TabContentThree'
 import '../css/TabsNav.css'; 
 
 class TabComponent extends Component {
@@ -50,6 +51,9 @@ class TabComponent extends Component {
           </TabPanel>
           <TabPanel>
             <TabContentTwo />
+          </TabPanel>
+          <TabPanel>
+            <TabContentThree />
           </TabPanel>
           </Tabs> 
       </div>
