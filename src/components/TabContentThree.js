@@ -1,7 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
 import { Button } from './Button'; 
-import { icon } from 'react-icon-kit'; 
+import { Icon } from 'react-icons-kit'; 
 import { cross } from 'react-icons-kit/icomoon/cross';
 import { checkmark } from 'react-icons-kit/icomoon/checkmark';
 
