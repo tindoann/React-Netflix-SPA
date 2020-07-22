@@ -1,12 +1,17 @@
-import React, { Component } from 'react'; 
-import { Link } from 'react-router-dom'; 
-import styled from 'styled-components'; 
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Icon } from "react-icons-kit";
+import { iosWorld } from "react-icons-kit/ionicons/iosWorld/";
+import { arrowSortedDown } from "react-icons-kit/typicons/arrowSortedDown/";
 
 class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <span>Questions? <Link>Call 1-877-742-1335</Link></span>
+        <span style={{ marginLeft: "15%", fontSize: "1.125rem" }}>
+          Questions? <Link>Call 1-877-742-1335</Link>
+        </span>
         <div className="footer-columns">
           <ul>
             <li>
@@ -67,40 +72,56 @@ class Footer extends Component {
               <Link>Legal Notices</Link>
             </li>
           </ul>
+          {/* Language Button  */}
+          <div className="lang-btn">
+            <Icon icon={iosWorld} size={28}/>
+            English
+            <Icon icon={arrowSortedDown} />
+          </div>
         </div>
-        </FooterContainer>
-    )
+      </FooterContainer>
+    );
   }
 }
 
-export default Footer; 
+export default Footer;
 
 const FooterContainer = styled.footer`
-  background: var(--main-deep-dark); 
-  padding-top: 10rem; 
-  padding-bottom: 3rem; 
-  color: #999; 
+  background: var(--main-deep-dark);
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+  color: #999;
 
   .footer-columns {
-    width: 70%; 
-    margin: 1rem auto 0; 
-    font-size: 0.9rem; 
-    overflow: auto; 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
+    width: 70%;
+    margin: 1rem auto 0;
+    font-size: 0.9rem;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   ul li {
-    list-style: none; 
-    line-height: 2.5; 
+    list-style: none;
+    line-height: 2.5;
   }
 
   a {
-    color: #999; 
+    color: #999;
   }
 
   a: hover {
-    text-decoration: underline; 
-    cusor: pointer; 
+    text-decoration: underline;
+    cusor: pointer;
+  }
+
+  // Language Button
+  .lang-btn {
+    background: transparent; 
+    border: 0.9px solid #333; 
+    padding: 1rem; 
+    width: 8rem; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
   }
 `;
