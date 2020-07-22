@@ -1,10 +1,11 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom'; 
+import styled from 'styled-components'; 
 
 class Footer extends Component {
   render() {
     return (
-      <div>
+      <FooterContainer>
         <span>Questions? <Link>Call 1-877-742-1335</Link></span>
         <div className="footer-columns">
           <ul>
@@ -67,9 +68,39 @@ class Footer extends Component {
             </li>
           </ul>
         </div>
-      </div>
+        </FooterContainer>
     )
   }
 }
 
 export default Footer; 
+
+const FooterContainer = styled.footer`
+  background: var(--main-deep-dark); 
+  padding-top: 10rem; 
+  padding-bottom: 3rem; 
+  color: #999; 
+
+  .footer-columns {
+    width: 70%; 
+    margin: 1rem auto 0; 
+    font-size: 0.9rem; 
+    overflow: auto; 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+  }
+
+  ul li {
+    list-style: none; 
+    line-height: 2.5; 
+  }
+
+  a {
+    color: #999; 
+  }
+
+  a: hover {
+    text-decoration: underline; 
+    cusor: pointer; 
+  }
+`;
