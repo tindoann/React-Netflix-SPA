@@ -5,6 +5,8 @@ import { Button } from './Button'
 import styled from 'styled-components'; 
 import { Icon } from 'react-icons-kit'; 
 import {ic_keyboard_arrow_right} from 'react-icons-kit/md/ic_keyboard_arrow_right'; 
+// Media query
+import { generateMedia } from 'styled-media-query'; 
 
 class Header extends Component {
   render() {
@@ -29,8 +31,14 @@ class Header extends Component {
 
 export default Header; 
 
-// Logo
+const customMedia = generateMedia({
+  lgDesktop: '1350px'; 
+  mdDesktop: '1150px', 
+  tablet: '960px'; 
+  smTablet: '740px'
+})
 
+// Logo
 const Logo = styled.img`
   width: 10rem; 
   height: 3.5rem; 
@@ -38,10 +46,21 @@ const Logo = styled.img`
   top: 25%; 
   left: 50%; 
   transform: translate(-50%, -50%)
+  margin-left: 0; 
+  ${customMedia.lessThan(`tablet`)`
+  left: 20%; 
+`}
 `; 
 // Header Container 
+const HeaderComponent = styled.header`
 
-const HeaderComponent = styled.div`
+.Icon svg {
+  vertical-align: bottom !important; 
+  margin-left: 1.5rem; 
+  ${customMedia.lessThan(`smTablet`)`
+  display: none !important; 
+  `}
+}
 .signIn-btn {
   right: 0; 
   margin: 1.125rem 3% 0; 
@@ -58,6 +77,10 @@ const HeaderComponent = styled.div`
   &:hover {
     background: var(--main-red-hover); 
   }
+  ${customMedia.lessThan('smTablet')`
+    margin-top: 1.25rem; 
+    right: 5%;
+    `}
 }
 
 // Header Top
@@ -82,12 +105,23 @@ const HeaderComponent = styled.div`
   }
 
 
-//Icon
-.Icon svg {
-  vertical-align: bottom; 
-  margin-left: 1.5rem; 
-}
+
+.main-offer-btn {
+  ${customMedia.lessThan('lgDesktop')`
+  margin: 0 33%; 
+  font-size: 1.5rem; 
+  `}
+  ${customMedia.lessThan('lgDesktop')`
+  margin: 0 25%; 
+  font-size: 1.5rem; 
+  `}
+  ${customMedia.lessThan('lgDesktop')`
+  margin: 0 20%; 
+  font-size: 1.3rem; 
+  `}
+  }
 `; 
+
 
 // Main Title
 const Title = styled.h1`
