@@ -72,7 +72,14 @@ ul li:hover svg path {
   .lgScreen {
     display: none; 
   }
+
+  .mdScreen {
+    display: block; 
+    margin-bottom: 0.4rem; 
+  }
 }
+
+
 
 /* Media Tab Nav#1  */
 @media (max-width: 900px) {
