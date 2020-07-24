@@ -101,10 +101,13 @@ const HeaderComponent = styled.header`
     align-center: center; 
     text-align: center; 
     flex-direction: column; 
-    z-index: 1; 
+    z-index: 2;
+    ${customMedia.lessThan('smTablet')`
+      display: grid; 
+      grid-template-rows: repeat(3, 60px); 
+      margin-top: 8rem; 
+    `} 
   }
-
-
 
 .main-offer-btn {
   ${customMedia.lessThan('lgDesktop')`
@@ -129,7 +132,10 @@ const Title = styled.h1`
   font-size: 5rem; 
   font-weight: 700; 
   line-height: 1.1em; 
-`; 
+  ${customMedia.lessThan('tablet')`
+    font-size: 2.6rem; 
+  `}
+  `; 
 
 // SubTitle
 const SubTitle = styled.h2`
@@ -138,4 +144,8 @@ const SubTitle = styled.h2`
   line-height: 1.25em; 
   margin: 0 0 1.875rem; 
   text-transform: uppercase; 
+  ${customMedia.lessThan('smTablet')`
+  font-size: 1.4rem; 
+  margin: 0; 
+
 `; 

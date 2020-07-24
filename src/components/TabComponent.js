@@ -22,27 +22,33 @@ class TabComponent extends Component {
           onSelect={tabIndex => this.setState({ tabIndex })}
         >
           <TabList className='tab-nav-container'>
-            <Tab className={`${this.state.tabIndex === 0 ? 'tab-selected active' : null}`}>
+            <Tab 
+              className={`${this.state.tabIndex === 0 ? 'tab-selected active' : null}`}>
               <TabDoor/>
-              <p style={{ marginBottom: "1.875rem" }}>
+              <p className='lgScreen' style={{ marginBottom: "1.875rem" }}>
                 <strong>
                   No commitments
                   <br />
                   Cancel online at anytime
                 </strong>
               </p>
+              <span className='mdScreen'>Cancel</span>
             </Tab>
             <Tab className={`${this.state.tabIndex === 1 ? 'tab-selected active' : null}`}>
               <TabDevices/>
-              <p style={{ marginTop: '-5.3125rem' }}>
+              <p className='lgScreen' style={{ marginTop: '-5.3125rem' }}>
                 <strong>Watch anywhere</strong>
               </p>
+              <br/>
+              <span className='mdScreen' style={{ marginTop: '-5.3125rem'}}>Devices</span>
             </Tab>
             <Tab className={`${this.state.tabIndex === 2 ? 'tab-selected active' : null}`}>
               <TabPrices/>
-              <p>
+              <p className='lgScreen'>
                 <strong>Pick your price</strong>
               </p>
+              <br />
+              <span className='mdScreen'>Price</span>
             </Tab>
           </TabList>
           {/* Tabs Content  */}
