@@ -60,5 +60,11 @@ const TabContentContainer = styled.div`
     align-items: center;
     font-size: 2rem;
     padding: 2.5rem;
+    ${customMedia.lessThan('tablet')`
+      grid-template-columns: 100%; 
+      text-align: center; 
+      padding-left: 0; 
+      padding-right: 0; 
+  `}
   }
 `;
