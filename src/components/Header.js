@@ -13,8 +13,12 @@ class Header extends Component {
     return (
       <HeaderComponent className='header-container'>
         <div className="header-top">
-          <Logo src={logo} />
-          <NavLink className='signIn-btn' to='/signIn'>Sign In</NavLink>
+          <Link to="/">
+            <Logo className="logo" src={logo} />
+          </Link>
+          <NavLink className='signIn-btn' to='/login'>
+            Sign In
+          </NavLink>
         </div>
         {/* Header Content */}
         <div className='header-content'>

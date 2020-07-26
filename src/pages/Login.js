@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
+import styled from 'styled-components'
 import { logo } from '../svg/logo.svg'; 
 
 class Login extends Component {
@@ -6,7 +7,7 @@ class Login extends Component {
     return (
       <div className='main-login-container'>
         <div className="header-top">
-          <img src={logo} alt="logo" className="logo" />
+          <Logo src={logo} alt="logo" className="logo" />
         </div>
       </div>
     );
@@ -14,3 +15,13 @@ class Login extends Component {
 }
 
 export default Login;
+
+// Logo
+const Logo = styled.img`
+  width: 11rem; 
+  position: absolute; 
+  top: 25%; 
+  left: 11%; 
+  transform: translate(-50%, -50%); 
+  margin-left: 0; 
+  `;
