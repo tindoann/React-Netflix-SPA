@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import styled from 'styled-components'
-import { logo } from '../svg/logo.svg'; 
+import logo from '../svg/logo.svg'; 
+import LoginForm from '../components/login/LoginForm';
 
 class Login extends Component {
   render() {
@@ -9,6 +10,7 @@ class Login extends Component {
         <div className="header-top">
           <Logo src={logo} alt="logo" className="logo" />
         </div>
+        <LoginForm />
       </div>
     );
   }
