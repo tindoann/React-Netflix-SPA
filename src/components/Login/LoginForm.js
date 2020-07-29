@@ -78,18 +78,29 @@ class LoginForm extends Component {
             <h1>Sign In</h1>
             <div className="input-container">
               <input 
-              className="input-empty" 
-              type="email" 
-              onChange={this.handleEmailChange}
-              required />
+                className={
+                  this.state.emailError
+                  ? 'input-error input-empty'
+                  : 'input-empty'
+                }
+                type='email'
+                onChange = {this.handleEmailChange}
+                value={this.state.email}
+                required 
+               />
               <label>Email or Phone Number</label>
               <span style={{ color: '#db7302'}}>{this.state.emailError}</span>
             </div>
             <div className="input-container">
-              <input 
+              <input
+                className={
+                  this.state.passwordError
+                  ? 'input-empty input-error'
+                  : 'input-empty'
+                }            
               type="password" 
               onChange={this.handlePasswordChange}
-
+              value={this.state.password}
               required />
               <label>Password</label>
               <span style={{ color: '#db7302'}}>
