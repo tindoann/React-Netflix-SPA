@@ -1,8 +1,80 @@
 import React, { Component } from 'react'; 
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import FBlogo from '../../images/fb-logo.png';
+const regexp = (/^\W+([\.-]?\w+)*@\W+([\.-]?\w+)(\.\w{2,3})+$/)
+
+
+const initState = {
+  checked: true, 
+  email: '', 
+  password: '', 
+  emailError: '', 
+  passwordError: ''
+}
 
 class LoginForm extends Component {
+
+  state = initState;
+
+  handleEmailChange = e => {
+    this.setState({
+      email: e.target.value
+    });
+  }; 
+
+  handlePasswordChange = e => {
+    this.setState({
+      password: e.target.value
+    });
+  }; 
+
+  // Validate
+  validate = () => {
+    let inputError = false; 
+    const errors = {
+      emailError: '',
+      passwordError: ''
+    }
+
+    if(!this.state.email) {
+      inputError = true; 
+      errors.emailError = 'Please enter a vaild email'
+      } else if (!this.state.email.match(regexp)) {
+        inputError = true; 
+        errors.emailError = (
+          <span style={{color: 'red'}}>Your email address must be valid</span>
+        )
+      }
+
+      if(this.state.password.length < 4) {
+        inputError = true; 
+        errors.passwordError = 'Your password must contain between 4 and 60 character'
+      }
+
+      this.setState({
+        ...errors
+      })
+
+      return inputError; 
+    };
+
+    onSubmit = e => {
+      e.preventDefault()
+
+      const err = this.validate(); 
+      if(!err) {
+        this.setState(initState); 
+      }
+    };
+
+    // Checkbox
+    handleCheckbox = e => {
+      this.setState({
+        checked: e.target.checked
+      });
+  }; 
+   
   render() {
     return (
       <FormContainer>
@@ -10,22 +82,65 @@ class LoginForm extends Component {
           <form>
             <h1>Sign In</h1>
             <div className="input-container">
-              <input className="input-empty" type="email" required />
-              <label htmlFor="">Email or Phone Number</label>
+              <input 
+                className={
+                  this.state.emailError
+                  ? 'input-error input-empty'
+                  : 'input-empty'
+                }
+                type='email'
+                onChange = {this.handleEmailChange}
+                value={this.state.email}
+                required 
+               />
+              <label>Email or Phone Number</label>
+              <span style={{ color: '#db7302'}}>{this.state.emailError}</span>
             </div>
             <div className="input-container">
-              <input type="password" required />
+              <input
+                className={
+                  this.state.passwordError
+                  ? 'input-empty input-error'
+                  : 'input-empty'
+                }            
+              type="password" 
+              onChange={this.handlePasswordChange}
+              value={this.state.password}
+              required />
               <label>Password</label>
+              <span style={{ color: '#db7302'}}>
+                {this.state.passwordError}
+              </span>
             </div>
             <div className="input-container">
-                <Button type="submit">Sign In</Button>
+                <Btn type="submit" onClick={this.onSubmit(e)}>
+                  Sign In
+                </Btn>
             </div>
             <label className="checkbox-container">
               Remember me
-              <input type="checkbox"/>
+              <input 
+                type="checkbox" 
+                defaultChecked={this.state.checked} 
+                onChange={this.handleCheckbox}
+              />
               <span className="checkmark"></span>
             </label>
-            <Link to="/" className="need-help">Need Help?</Link>
+            <Link to="/" className="need-help">
+              Need Help?
+            </Link>
+            <div className="bottom-form">
+              <img src={FBlogo} alt="facebook" />
+              <Link to="/" className="login-fb-text">
+                Login with Facebook
+              </Link>
+              <span style={{color: '#999'}}>New to Netflix?</span>&nbsp;
+              <Link to='/' className='sign-up-text'>
+                Sign up now
+              </Link>
+              <br />
+              <br />
+            </div>
           </form>
         </div>
       </FormContainer>
@@ -88,6 +203,10 @@ const FormContainer = styled.div`
     outline: none; 
   }
 
+  input-error {
+    border-bottom: 1px solid #db7302; 
+  }
+
   // Checkbox
   .checkbox-container {
     margin-left: 0.75rem; 
@@ -130,6 +249,31 @@ const FormContainer = styled.div`
     color: #828282; 
     margin-left: 6.6rem; 
     font-size: 0.9rem; 
+  }
+
+  // Bottom form 
+  .bottom-form img {
+    width: 1.5625rem; 
+    margin: 0.625rem 0.625rem -0.4375rem; 
+  }
+
+  .login-fb-text {
+    color: #828282; 
+    font-size: 0.9rem; 
+  }
+
+  bottom-form {
+    position: absolute; 
+    bottom: 0; 
+    margin-bottom: 4rem; 
+  }
+
+  .sign-up-text {
+    font-size: 1.1rem; 
+    color #fff; 
+    &:hover {
+      text-decoration: underline; 
+    }
   }
 `;
 
