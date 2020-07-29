@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import logo from '../svg/logo.svg'; 
 import LoginForm from '../components/login/LoginForm';
+import LoginFooter from '../components/login/LoginFooter';
 
 class Login extends Component {
   render() {
@@ -11,6 +12,7 @@ class Login extends Component {
           <Logo src={logo} alt="logo" className="logo" />
         </div>
         <LoginForm />
+        <LoginFooter />
       </div>
     );
   }
