@@ -6,6 +6,7 @@ const regexp = (/^\W+([\.-]?\w+)*@\W+([\.-]?\w+)(\.\w{2,3})+$/)
 
 
 const initState = {
+  checked: true, 
   email: '', 
   password: '', 
   emailError: '', 
@@ -65,10 +66,14 @@ class LoginForm extends Component {
       if(!err) {
         this.setState(initState); 
       }
-    }
+    };
 
-
-  }
+    // Checkbox
+    handleCheckbox = e => {
+      this.setState({
+        checked: e.target.checked
+      });
+  }; 
    
   render() {
     return (
@@ -114,7 +119,11 @@ class LoginForm extends Component {
             </div>
             <label className="checkbox-container">
               Remember me
-              <input type="checkbox"/>
+              <input 
+                type="checkbox" 
+                defaultChecked={this.state.checked} 
+                onChange={this.handleCheckbox}
+              />
               <span className="checkmark"></span>
             </label>
             <Link to="/" className="need-help">
