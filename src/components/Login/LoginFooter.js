@@ -21,75 +21,31 @@ class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <span style={{ marginLeft: "15%", fontSize: "1.125rem" }}>
-          Questions? <Link>Call 1-877-742-1335</Link>
+        <span style={{ marginLeft: "10%", color: '#999'}}>
+          Questions?&nbsp;<Link>Call 1-877-742-1335</Link>
         </span>
         <div className="footer-columns">
           <ul>
             <li>
-              <Link>FAQ</Link>
+              <Link to="/">Gift Card Terms</Link>
             </li>
             <li>
-              <Link>Investor Relations</Link>
+              <Link to="/">Jobs</Link>
             </li>
             <li>
-              <Link>Ways to Watch</Link>
+              <Link to="/">Terms of Use</Link>
             </li>
             <li>
-              <Link>Corporate Information</Link>
-            </li>
-            <li>
-              <Link>Netflix Originals</Link>
+              <Link to="/">Privacy Statement</Link>
             </li>
           </ul>
-          <ul>
-            <li>
-              <Link>Help Center</Link>
-            </li>
-            <li>
-              <Link>Jobs</Link>
-            </li>
-            <li>
-              <Link>Terms of Use</Link>
-            </li>
-            <li>
-              <Link>Contact Us</Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link>Redeem Gift Cards</Link>
-            </li>
-            <li>
-              <Link>Privacy</Link>
-            </li>
-            <li>
-              <Link>Terms of Use</Link>
-            </li>
-            <li>
-              <Link>Speed Test</Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link>Media Center</Link>
-            </li>
-            <li>
-              <Link>Buy Gift Card</Link>
-            </li>
-            <li>
-              <Link>Cookie Preferences</Link>
-            </li>
-            <li>
-              <Link>Legal Notices</Link>
-            </li>
-          </ul>
+          </div>
           {/* Language Button  */}
           <div className="lang-btn" onClick={this.handleToggle}>
             <Icon icon={iosWorld} size={28}/>
             English
             <Icon icon={arrowSortedDown} />
-          </div>
+        
         </div>
         {/* Toggle Language Content  */}
         {this.state.langContent && (
@@ -102,7 +58,7 @@ class Footer extends Component {
             </ul>
           </div>
         )}
-        <span style={{ marginLeft: '15%', fontSize: '0.9rem' }}> Netflix Canada </span>
+        <br />
       </FooterContainer>
     );
   }
@@ -115,15 +71,20 @@ export default Footer;
    tablet: '740px'
  })
 
+// Main Footer Container
 const FooterContainer = styled.footer`
-  background: var(--main-deep-dark);
-  padding-top: 10rem;
-  padding-bottom: 3rem;
-  color: #999;
+  justify-content: center; 
+  background: rgba(0, 0, 0, 0.8);
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  margin-top: 6rem; 
+  position: relative; 
+  z-index: 5; 
 
   .footer-columns {
-    width: 70%;
+    width: 80%;
     margin: 1rem auto 0;
+    color: #999; 
     font-size: 0.9rem;
     overflow: auto;
     display: grid;
@@ -140,6 +101,12 @@ const FooterContainer = styled.footer`
 
   a {
     color: #999;
+    font-size: 0.9rem; 
+  }
+
+  p {
+    text-decoration: underline; 
+    cursor: pointer; 
   }
 
   a: hover {
@@ -151,6 +118,9 @@ const FooterContainer = styled.footer`
   .lang-btn {
     background: transparent; 
     border: 0.9px solid #333; 
+    margin-left: 10%; 
+    margin-right: 2rem; 
+    color: #999; 
     padding: 1rem; 
     width: 8rem; 
     display: grid; 
@@ -161,7 +131,7 @@ const FooterContainer = styled.footer`
 
   // Toggle Language Content
   .lang-toggle {
-    margin-left: 15%; 
+    margin-left: 10%; 
     position: absolute; 
     margin-top: -2rem;  
   }
