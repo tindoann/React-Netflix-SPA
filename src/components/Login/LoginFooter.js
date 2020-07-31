@@ -68,7 +68,7 @@ export default Footer;
 
 // Media 
  const customMedia = generateMedia({
-   tablet: '740px'
+   tablet: '40px'
  })
 
 // Main Footer Container
@@ -89,9 +89,6 @@ const FooterContainer = styled.footer`
     overflow: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    ${customMedia.lessThan('tablet')`
-    grid-template-columns: repeat(2f, 1fr); 
-    `}
   }
 
   ul li {

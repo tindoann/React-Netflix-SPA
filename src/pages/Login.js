@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import styled from 'styled-components'
+import { generateMedia } from 'styled-media-query'; 
 import logo from '../svg/logo.svg'; 
 import LoginForm from '../components/login/LoginForm';
 import LoginFooter from '../components/login/LoginFooter';
@@ -20,6 +21,12 @@ class Login extends Component {
 
 export default Login;
 
+// Media 
+const customMedia = generateMedia({
+  tablet: '640px', 
+  lgTablet: '740px'
+}); 
+
 // Logo
 const Logo = styled.img`
   width: 11rem; 
@@ -28,4 +35,8 @@ const Logo = styled.img`
   left: 11%; 
   transform: translate(-50%, -50%); 
   margin-left: 0; 
+  ${customMedia.lessThan('tablet')`
+  top: 45%; 
+  left: 23%;
+  `}
   `;
