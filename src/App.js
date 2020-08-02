@@ -2,7 +2,6 @@ import React from 'react'
 import './css/Main.css';
 import Main from './pages';
 import Login from './pages/Login'; 
-import { ChoosePlan } from './pages/ChoosePlan'; 
 import { Switch, Route } from 'react-router-dom'; 
 import ChoosePlan from './pages/ChoosePlan'; 
 
