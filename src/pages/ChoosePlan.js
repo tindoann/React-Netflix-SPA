@@ -27,10 +27,11 @@ const ChoosePlan = () => {
         </p>
         <h2>Choose your plan.</h2>
         <div className='checked-list'>
-          <div className='checked-list'></div>
-          <div className='checked-list'></div>
-          <div className='checked-list'></div>
+          <div className='bullet'>No commitments, cancel anytime.</div>
+          <div className='bullet'>Everything on Netflix for one low price</div>
+          <div className='bullet'>Unlimited viewing on all your devices.</div>
         </div>
+        <Button>See the plans</Button>
       </div>
     </MainContainer>
   ); 
