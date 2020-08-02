@@ -9,7 +9,7 @@ const ChoosePlan = () => {
       {/* header top */}
       <div className='header-top'>
         <Link to='/'>
-          <img src={logo} alt='logo'/>
+          <Logo src={logo} alt='logo'/>
         </Link>
         <NavLink to='/login' className='btn signIn-btn'>
           Sign In
@@ -64,4 +64,26 @@ const MainContainer = styled.div`
     flex-derection: column; 
     z-index: 2; 
   }
+
+  // checkmark logo
+  .check-logo {
+    width: 3rem; 
+    margin-top: 3.125rem; 
+    margin-bottom: 2rem; 
+  }
+
+  .header-content img {
+    margin: 6.25rem auto 1.875rem; 
+  }
+`; 
+
+// logo
+const logo = styled.img`
+  width: 10.5rem; 
+  height: 3.5rem; 
+  position: absolute; 
+  top: 49%; 
+  left: 8%;
+  transform: translate(-50%, -50%); 
+  margin-left: 0;  
 `; 
