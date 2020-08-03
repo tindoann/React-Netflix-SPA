@@ -1,15 +1,18 @@
 import React from 'react'; 
 import styled from 'styled-components';
 import logo from '../svg/logo.svg'; 
+import CheckmarkLogo from '../images/Checkmark.png'; 
+import { Button } from '../components/Button'; 
+import FooterChoosePlan from '../components/chooseplan/FooterChoosePlan'; 
 import { Link, NavLink } from 'react-router-dom'; 
 
 const ChoosePlan = () => {
   return (
-    <MainContainer>
+    <MainContainer> 
       {/* header top */}
       <div className='header-top'>
         <Link to='/'>
-          <Logo src={logo} alt='logo'/>
+          <Logo src={logo} alt='logo' />
         </Link>
         <NavLink to='/login' className='btn signIn-btn'>
           Sign In
@@ -33,6 +36,7 @@ const ChoosePlan = () => {
         </div>
         <Button>See the plans</Button>
       </div>
+      <FooterChoosePlan />
     </MainContainer>
   ); 
 };  
@@ -45,7 +49,7 @@ const MainContainer = styled.div`
   .header-top {
     background: #fff; 
     height: 6rem; 
-    border-bottom: 1px solid #6e6e6e;   
+    border-bottom: 1px solid #e6e6e6;   
   }
 
   // header content
@@ -75,7 +79,56 @@ const MainContainer = styled.div`
   .header-content img {
     margin: 6.25rem auto 1.875rem; 
   }
-`; 
+
+  // checked list 
+  .checked-list {
+    text-align: left; 
+    margin: 1rem auto 3rem; 
+    padding-left: 1.5625rem; 
+    width: 85%; 
+    font-size: 17px; 
+    padding: auto; 
+  }
+
+  // bullets
+  .bullet {
+    margin-top: 1rem; 
+    margin-left: 1rem;
+    text-indent: -1rem; 
+    line-height: 1.2rem; 
+  }
+
+  .checked-list .bullet::before {
+    color: transparent; 
+    display: inline-block; 
+    position: relative; 
+    height: relative; 
+    height: 0.3rem; 
+    width: 0.8rem; 
+    content: ''; 
+    left: -0.9375rem; 
+    bottom: 0.1875rem; 
+    border-bottom: 1px solid #e50914; 
+    border-left: 1px solid #e50914; 
+    transform: rotate(-45deg); 
+  }
+
+  // the sigin btn
+  .signIn-btn {
+    margin: 1.5625rem 3% 0; 
+    padding: 0.4375rem 1.0625rem; 
+    font-weight: 700; 
+    line-height: normal; 
+    color: var(--main-dark); 
+    font-size: 1.25rem; 
+    right: 0; 
+    position: absolute; 
+    cursor: pointer; 
+    &:hover {
+      text-decoration: underline; 
+    }
+  }
+`;
 
 // logo
 const logo = styled.img`
