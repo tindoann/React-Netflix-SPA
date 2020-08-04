@@ -95,7 +95,7 @@ const TabContainer = styled.div`
     grid-column: 1 / -1; 
     margin-left: 30%;
     margin-right: 30%; 
-  `}
+    `}
   }
 
   img {
@@ -111,6 +111,7 @@ const TabContainer = styled.div`
  margin-top: 2rem; 
  ${customMedia.lessThan('tablet')`
  grid-template-columns: 1fr; 
+ `}
 }
 
 h3 {
