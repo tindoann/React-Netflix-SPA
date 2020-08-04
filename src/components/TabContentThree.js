@@ -1,10 +1,12 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
+import { Link } from 'react-router-dom'; 
+import { generateMedia } from 'styled-media-query'
+// Icons
 import { Button } from './Button'; 
 import { Icon } from 'react-icons-kit'; 
 import { cross } from 'react-icons-kit/icomoon/cross';
 import { checkmark } from 'react-icons-kit/icomoon/checkmark';
-import { generateMedia } from 'styled-media-query'
 
 function TabContentThree() {
   return (
@@ -12,20 +14,23 @@ function TabContentThree() {
       <div className='tab-content'>
         <div className='tab-top-content'>
           <span style={{ fontSize: '1.5rem' }}>
-            Choose one plan and watch everything on Netflix
+            Choose one plan and watch everything on Netflix.
           </span>
-          <Button className='btn'>try it now</Button>
+          <Link className="btn" to="/choose-plan">
+            <Button className='btn'>try it now</Button>
+          </Link>
         </div>
         {/* Tab Bottom Content */}
         <div className='tab-bottom-content'>
           <table>
             <thread>
              <tr>
-               <th></th>
-               <th>Basic</th>
-               <th>Standard</th>
-               <th>Premium</th>
-             </tr>
+               <th>
+                 </th>
+                  <th>Basic</th>
+                  <th>Standard</th>
+                  <th>Premium</th>
+              </tr>
             </thread>
             <tbody>
              <tr>
