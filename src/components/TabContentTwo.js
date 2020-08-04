@@ -4,25 +4,31 @@ import styled from 'styled-components';
 import ImgTv from '../images/tab-tv.png';
 import ImgTablet from '../images/tab-tablet.png';
 import ImgMacbook from '../images/tab-macbook.png';
+import { Link } from 'react-router-dom'; 
 import { generateMedia } from 'styled-media-query'
+
 function TabContentTwo() {
   return (
     <TabContainer>
       <div className='tab-content'>
         <div className='tab-top-content'>
-          <span style={{fontSize: '1.5rem'}}>
+          <span style={{ fontSize: '1.5rem' }}>
             Watch TV shows and movies anytime, anywhere - personalized for you. 
           </span>
-          <Button className='btn'>Try it now</Button>
+          <Link className='btn' to='/choose-plan'>
+           <Button>Try it now</Button>
+          </Link>
         </div>
         {/* Tab Button Content */}
         <div className="tab-bottom-content">
           {/* Tv Image Container */}
           <div>
-            <img src={ImgTv} style={{width: '18.75'}}/>
+            <img src={ImgTv} alt='tv'/>
             <h3>Watch on your TV</h3>
-            <p>Smart Tvs, Playstation, Xbox, Chromecast, AppleTV, Blu-ray players and 
-              more.</p>
+            <p>
+              Smart TVs, Playstation, Xbox, Chromecast, AppleTV, Blu-ray players and 
+              more.
+            </p>
           </div>
           {/* Tablet Image Container */}
           <div>
@@ -35,8 +41,10 @@ function TabContentTwo() {
           <div>
             <img src={ImgMacbook} style={{width: '18.75rem', paddingTop: '0.625rem', paddingBottom: '0.625rem'}}/>
             <h3>Watch on your TV</h3>
-            <p>Smart Tvs, Playstation, Xbox, Chromecast, AppleTV, Blu-ray players and 
-              more.</p>
+            <p>
+              Smart Tvs, Playstation, Xbox, Chromecast, AppleTV, Blu-ray players and 
+              more.
+            </p>
           </div>
         </div>
       </div>
@@ -50,7 +58,6 @@ export default TabContentTwo;
 const customMedia = generateMedia({
   smDesktop: '1440px', 
   tablet: '900px'
-
 })
 
 // Main default TabContentTwo; 
@@ -71,9 +78,6 @@ const TabContainer = styled.div`
     ${customMedia.lessThan('smDesktop')`
       grid-template-columns: repeat(2, 1fr);
     `}
-
-     
-
   }
 
   span {
