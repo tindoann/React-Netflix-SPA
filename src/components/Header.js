@@ -23,9 +23,10 @@ class Header extends Component {
         {/* Header Content */}
         <div className='header-content'>
           <Title>See what's next</Title>
-          <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME</SubTitle>
-          <Button className='main-offer-btn' primary>try it now
-            <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />
+          <SubTitle>watch anywhere. cancel anytime</SubTitle>
+          <Button className='main-offer-btn' primary>
+            try it now
+            <Icon className="Icon" size={37} icon={ic_keyboard_arrow_right} />
           </Button>
         </div>
       </HeaderComponent>
@@ -36,9 +37,9 @@ class Header extends Component {
 export default Header; 
 
 const customMedia = generateMedia({
-  lgDesktop: '1350px'; 
+  lgDesktop: '1350px',
   mdDesktop: '1150px', 
-  tablet: '960px'; 
+  tablet: '960px',
   smTablet: '740px'
 })
 
