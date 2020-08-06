@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { generateMedia } from "styled-media-query";
 import { Link } from "react-router-dom";
 
 const FooterChoosePlan = () => {

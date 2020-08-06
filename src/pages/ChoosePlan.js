@@ -16,7 +16,7 @@ class ChoosePlan extends Component {
         {/* header top */}
         <div className="header-top">
           <Link to="/">
-            <Logo src={logo} alt="logo" />
+            <logo src={logo} alt="logo" />
           </Link>
           <NavLink to="/login" className="btn signIn-btn">
             Sign In
@@ -138,7 +138,7 @@ const MainContainer = styled.div`
 `;
 
 // logo
-const logo = styled.img`
+const logos = styled.img`
   width: 10.5rem;
   height: 3.5rem;
   position: absolute;
