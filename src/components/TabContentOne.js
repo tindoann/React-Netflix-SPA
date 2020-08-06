@@ -23,7 +23,7 @@ function TabContentOne() {
             </Link>
           </div>
           <React.Fragment>
-            <img src={img} alt='' />
+            <img src={Img} alt='' />
           </React.Fragment>
         </div>
       </div>

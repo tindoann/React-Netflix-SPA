@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import { generateMedia } from 'styled-media-query'; 
 import logo from '../svg/logo.svg'; 
-import LoginForm from '../components/login/LoginForm';
-import LoginFooter from '../components/login/LoginFooter';
+import LoginForm from '../components/Login/LoginForm';
+import LoginFooter from '../components/Login/LoginFooter';
 
 class Login extends Component {
   render() {

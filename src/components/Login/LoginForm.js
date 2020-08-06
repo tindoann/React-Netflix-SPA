@@ -1,9 +1,11 @@
 import React, { Component } from 'react'; 
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import FBlogo from '../../images/fb-logo.png';
-const regexp = (/^\W+([\.-]?\w+)*@\W+([\.-]?\w+)(\.\w{2,3})+$/)
+import { generateMedia } from 'styled-media-query'; 
+// fix media query
 
+const regexp = (/^\W+([\.-]?\w+)*@\W+([\.-]?\w+)(\.\w{2,3})+$/)
 
 const initState = {
   checked: true, 
@@ -12,6 +14,8 @@ const initState = {
   emailError: '', 
   passwordError: ''
 }
+
+// hello
 
 class LoginForm extends Component {
 
@@ -149,6 +153,11 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
+
+// Media 
+const customMedia = generateMedia({
+  tablet: '40px'
+})
 
 // Form Container
 const FormContainer = styled.div`
