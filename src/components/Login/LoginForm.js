@@ -92,7 +92,7 @@ class LoginForm extends Component {
                   ? 'input-error input-empty'
                   : 'input-empty'
                 }
-                type='email'
+                type='email' 
                 onChange = {this.handleEmailChange}
                 value={this.state.email}
                 required 
@@ -117,9 +117,9 @@ class LoginForm extends Component {
               </span>
             </div>
             <div className="input-container">
-                <Btn type="submit" onClick={this.onSubmit(e)}>
+                <btn type="submit" onClick={e => this.onSubmit(e)}>
                   Sign In
-                </Btn>
+                </btn>
             </div>
             <label className="checkbox-container">
               Remember me
